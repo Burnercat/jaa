@@ -38,23 +38,29 @@ public class Bellmanford{
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter number of vertices: ");
-        int V = scanner.nextInt();
-        System.out.print("Enter number of edges: ");
-        int E = scanner.nextInt();
-        List<Edge> edges = new ArrayList<>();
-        System.out.println("Enter each edge in format: source destination weight");
-        for (int i = 0; i < E; i++) {
-            int u = scanner.nextInt();
-            int v = scanner.nextInt();
-            int w = scanner.nextInt();
-            edges.add(new Edge(u, v, w));
-        
-        System.out.print("Enter source vertex: ");
-        int source = scanner.nextInt();
-        bellmanFord(edges, V, source);
-        scanner.close();
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.print("Enter number of vertices: ");
+    int V = scanner.nextInt();
+
+    System.out.print("Enter number of edges: ");
+    int E = scanner.nextInt();
+
+    List<Edge> edges = new ArrayList<>();
+    System.out.println("Enter each edge in format: source destination weight");
+
+    for (int i = 0; i < E; i++) {
+        int u = scanner.nextInt();
+        int v = scanner.nextInt();
+        int w = scanner.nextInt();
+        edges.add(new Edge(u, v, w));
     }
+
+    System.out.print("Enter source vertex: ");
+    int source = scanner.nextInt();
+
+    bellmanFord(edges, V, source);
+    scanner.close();
 }
+
 }
